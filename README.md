@@ -56,4 +56,4 @@ server {
 ```
 ### 安装脚本
 
-http://operation.yourdomain.com/system/setup/install
+\http://operation.yourdomain.com/system/setup/install
