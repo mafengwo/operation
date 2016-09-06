@@ -1,6 +1,7 @@
 #AOS: Automatic Operation System 自动化运维系统
 
 ## 功能说明
+ ![image](https://raw.githubusercontent.com/mafengwo/operation/master/Operation.jpg)
 - 服务器信息管理
   + 服务节点管理
   + 服务标签管理
