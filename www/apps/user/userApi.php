@@ -64,34 +64,8 @@ class MuserApi extends \Ko_Mode_Item
         if (!$userInfo) {
             return false;
         }
-        session_start();
-        $_SESSION ['admin'] = $userInfo;
-        $userLoginApi = new MloginApi();
-        setcookie('admintoken', $userLoginApi->SGetSessionToken($_SESSION['admin']['id'], ''), 0, '/', '.'.MAIN_DOMAIN, false, true);
-
-        return true;
-    }
-
-    public function logoutAdminAuth()
-    {
-        session_start();
-        unset($_SESSION ['admin']);
-        setcookie('admintoken', '', 0, '/', '.'.MAIN_DOMAIN, false, true);
-    }
-
-    public function checkLogin()
-    {
-        $userLoginApi = new \apps\user\MloginApi();
-        $tokenuid = $userLoginApi->ICheckSessionToken($_COOKIE ['admintoken'], $sExinfo, $iErrno);
-        if ($tokenuid) {
-            if (!$this->doAfterLogin($tokenuid)) {
-                //锁定
-                return false;
-            }
-        } else {
-            return false;
-        }
-
+        $loginApi = new \apps\user\MloginApi();
+        $loginApi->vSetLoginUid($uid);
         return true;
     }
 }
