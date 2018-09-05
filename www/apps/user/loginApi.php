@@ -10,7 +10,7 @@ namespace apps\user;
 
 class MloginApi extends \Ko_Mode_User
 {
-    const SESSION_TOKEN_NAME = 'admintoken';
+    const SESSION_TOKEN_NAME = 'token';
     const PERSISTENT_TOKEN_NAME = 'p';
 
     protected $_aConf = array(
